@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO TO KNOW 6 ภาค 6 จังหวัด เที่ยวไทยไม่ไปไม่รู้</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#f59e0b',
+                        dark: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .image-zoom:hover img {
+            transform: scale(1.05);
+        }
+        .image-zoom img {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-2xl font-bold text-primary tracking-tight">GO TO<span class="text-secondary">KNOW</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#phrae" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคเหนือ</a>
+                    <a href="#kamphaengphet" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคกลาง</a>
+                    <a href="#udonthani" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคอีสาน</a>
+                    <a href="#rayong" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคตะวันออก</a>
+                    <a href="#tak" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคตะวันตก</a>
+                    <a href="#phuket" class="text-gray-600 hover:text-primary font-medium transition-colors">ภาคใต้</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#phrae" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">แพร่ (เหนือ)</a>
+                <a href="#kamphaengphet" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">กำแพงเพชร (กลาง)</a>
+                <a href="#udonthani" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">อุดรธานี (อีสาน)</a>
+                <a href="#rayong" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">ระยอง (ตะวันออก)</a>
+                <a href="#tak" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">ตาก (ตะวันตก)</a>
+                <a href="#phuket" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">ภูเก็ต (ใต้)</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-16 h-[80vh] flex items-center justify-center overflow-hidden">
+        <img src="https://loremflickr.com/1920/1080/thailand,landscape?lock=100" alt="Thailand Landscape" class="absolute inset-0 w-full h-full object-cover z-0">
+        <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-10">
+            <span class="inline-block py-1 px-4 rounded-full bg-primary text-white text-sm font-semibold mb-6 tracking-wider shadow-lg">แคมเปญท่องเที่ยวไทย 2026</span>
+            <h1 class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+                GO TO <span class="text-secondary">KNOW</span><br>
+                <span class="text-3xl md:text-5xl font-medium mt-4 block">6 ภาค 6 จังหวัด</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light drop-shadow-md">เที่ยวไทยไม่ไปไม่รู้ เปิดมุมมองใหม่กับ 6 เมืองรองและเมืองหลักที่เต็มไปด้วยมนต์เสน่ห์</p>
+            <a href="#phrae" class="inline-block bg-primary hover:bg-sky-600 text-white font-medium py-4 px-10 rounded-full transition-colors shadow-xl text-lg">
+                เริ่มต้นการเดินทาง
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="phrae" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXFvWCFa4bn718Lv-4d9P_JXJerXdqosV1cznq-1sKcw&s=10" alt="แพร่" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-secondary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคเหนือ</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดแพร่ (Phrae)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">เมืองล้านนาตะวันออกที่มีเอกลักษณ์ โดดเด่นด้วยสถาปัตยกรรมเรือนไม้สักอันงดงาม วิถีชีวิตสโลว์ไลฟ์ที่สงบเงียบ และธรรมชาติที่บริสุทธิ์</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,temple,travel?lock=1" alt="วัดพระธาตุช่อแฮ" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">วัดพระธาตุช่อแฮ</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ปูชนียสถานศักดิ์สิทธิ์คู่บ้านคู่เมืองแพร่ พระธาตุประจำปีเกิดปีขาล ศูนย์รวมจิตใจของชาวล้านนา</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,house,wooden?lock=2" alt="คุ้มวงศ์บุรี" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">คุ้มวงศ์บุรี</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เรือนไม้สักทองสีชมพู อายุกว่า 100 ปี งดงามด้วยสถาปัตยกรรมไทยผสมยุโรปแบบเรือนขนมปังขิง</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,nature,canyon?lock=3" alt="แพะเมืองผี" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">วนอุทยานแพะเมืองผี</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ประติมากรรมธรรมชาติ เสาดินรูปร่างแปลกตาที่เกิดจากการกัดเซาะของน้ำและลมผ่านกาลเวลา</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,waterfall,forest?lock=4" alt="อุทยานแห่งชาติเวียงโกศัย" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">อช.เวียงโกศัย</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ชมน้ำตกแม่เกิ๋งหลวงที่สวยงาม แวดล้อมด้วยป่าเขาอุดมสมบูรณ์ เหมาะสำหรับการพักผ่อนท่ามกลางธรรมชาติ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/noodle,thai,food?lock=5" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ขนมจีนน้ำย้อย กาดน้ำทอง">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ขนมจีนน้ำย้อย กาดน้ำทอง</h4><p class="text-sm text-gray-600 mt-1">เมนูเด็ดเมืองแพร่ ขนมจีนเส้นสดบีบใหม่ๆ ทานคู่กับน้ำย้อยรสแซ่บ</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/thai,restaurant,food?lock=6" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านอาหารปั๋นใจ">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านอาหารปั๋นใจ</h4><p class="text-sm text-gray-600 mt-1">อาหารพื้นเมืองเหนือรสชาติต้นตำรับ บรรยากาศร่มรื่น น่านั่ง</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/cafe,coffee,thailand?lock=7" class="w-28 h-28 rounded-xl object-cover mr-5" alt="กาแฟแห่ระเบิด">
+                                <div><h4 class="font-bold text-gray-900 text-lg">กาแฟแห่ระเบิด</h4><p class="text-sm text-gray-600 mt-1">คาเฟ่ชื่อดังที่มีเรื่องราวประวัติศาสตร์ พร้อมกาแฟรสชาติเยี่ยม</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/thai,food,meal?lock=8" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านร่มไม้ใหญ่">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านร่มไม้ใหญ่</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารไทย-พื้นเมือง บรรยากาศดี เหมาะสำหรับรับประทานกับครอบครัว</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,room,boutique?lock=9" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ฮัก อินน์ แพร่">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ฮัก อินน์ แพร่ (Hug Inn)</h4><p class="text-sm text-gray-600 mt-1">ที่พักสไตล์มินิมอลใจกลางเมือง สะอาด เดินทางสะดวกสบาย</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,art,interior?lock=10" class="w-28 h-28 rounded-xl object-cover mr-5" alt="โรงแรมธาริส อาร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">โรงแรมธาริส อาร์ท</h4><p class="text-sm text-gray-600 mt-1">โรงแรมบูทีคดีไซน์สวยงาม ตกแต่งด้วยงานศิลปะร่วมสมัย</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,thailand,wood?lock=11" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เฮือนนานา บูติก โฮเทล">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เฮือนนานา บูติก โฮเทล</h4><p class="text-sm text-gray-600 mt-1">ที่พักสไตล์ล้านนาประยุกต์ ร่มรื่นด้วยต้นไม้ บริการอบอุ่น</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,nature,pool?lock=12" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ตรีธารา รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ตรีธารา รีสอร์ท</h4><p class="text-sm text-gray-600 mt-1">รีสอร์ทท่ามกลางธรรมชาติ เงียบสงบ เหมาะแก่การพักผ่อนอย่างแท้จริง</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kamphaengphet" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrvqd9WGxyiow2MrjDro-iPxjtlD4HAa7cMQTCb40k7g&s=10" alt="กำแพงเพชร" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-primary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคกลาง</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดกำแพงเพชร (Kamphaeng Phet)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">เมืองมรดกโลกที่เงียบสงบ เต็มไปด้วยเรื่องราวประวัติศาสตร์อันยาวนาน ผสมผสานกับความอุดมสมบูรณ์ของป่าไม้และธรรมชาติที่สมบูรณ์</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,ruins,history?lock=13" alt="อุทยานประวัติศาสตร์กำแพงเพชร" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">อุทยานประวัติศาสตร์</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">มรดกโลกทางวัฒนธรรม ชมความงามของโบราณสถานศิลาแลงอันยิ่งใหญ่ท่ามกลางป่าร่มรื่น</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,mountain,fog?lock=14" alt="ช่องเย็น" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ช่องเย็น (อช.แม่วงก์)</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">จุดชมวิวสัมผัสอากาศหนาวเย็นตลอดปี ทะเลหมอกสวยงาม เป็นที่ชื่นชอบของสายแคมป์ปิ้ง</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,hotspring,nature?lock=15" alt="บ่อน้ำพุร้อนพระร่วง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">บ่อน้ำพุร้อนพระร่วง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ผ่อนคลายกับน้ำแร่ธรรมชาติ แหล่งท่องเที่ยวเชิงสุขภาพที่เหมาะสำหรับการแช่เท้าคลายเมื่อย</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/thailand,shrine,culture?lock=16" alt="ศาลพระอิศวร" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ศาลพระอิศวร</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เทวสถานเก่าแก่ที่แสดงถึงความเชื่อทางศาสนาพราหมณ์-ฮินดูในอดีต ศูนย์รวมความศรัทธา</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/noodle,pork,food?lock=17" class="w-28 h-28 rounded-xl object-cover mr-5" alt="บะหมี่ชากังราว">
+                                <div><h4 class="font-bold text-gray-900 text-lg">บะหมี่ชากังราว</h4><p class="text-sm text-gray-600 mt-1">ของดีเมืองกำแพงเพชร เส้นบะหมี่เหนียวนุ่ม หมูแดงอร่อย สูตรดั้งเดิม</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/thai,boatnoodle,food?lock=18" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ก๋วยเตี๋ยวเรือนแพ">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ก๋วยเตี๋ยวเรือนแพ</h4><p class="text-sm text-gray-600 mt-1">ก๋วยเตี๋ยวรสเด็ดบรรยากาศริมแม่น้ำปิง รสชาติจัดจ้าน เข้มข้น</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/steak,food,meal?lock=19" class="w-28 h-28 rounded-xl object-cover mr-5" alt="บิ๊กบะหมี่ แอนด์ สเต็ก">
+                                <div><h4 class="font-bold text-gray-900 text-lg">บิ๊กบะหมี่ แอนด์ สเต็ก</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารยอดนิยม มีทั้งเมนูเส้นและสเต็กชิ้นโตให้เลือกหลากหลาย</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/chickenrice,thai,food?lock=20" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ข้าวมันไก่ป้าณี">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ข้าวมันไก่ป้าณี</h4><p class="text-sm text-gray-600 mt-1">ร้านข้าวมันไก่เก่าแก่ ไก่นุ่ม ข้าวมันหอม น้ำจิ้มรสเด็ดไม่เหมือนใคร</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,river,hotel?lock=21" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ซีนิค ริเวอร์ไซด์ รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ซีนิค ริเวอร์ไซด์ รีสอร์ท</h4><p class="text-sm text-gray-600 mt-1">ที่พักริมแม่น้ำปิง บรรยากาศโรแมนติกและเป็นส่วนตัวสุดๆ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,classic,room?lock=22" class="w-28 h-28 rounded-xl object-cover mr-5" alt="นวรัตน์ เฮอริเทจ">
+                                <div><h4 class="font-bold text-gray-900 text-lg">นวรัตน์ เฮอริเทจ</h4><p class="text-sm text-gray-600 mt-1">โรงแรมใจกลางเมือง ตกแต่งสไตล์คลาสสิก สิ่งอำนวยความสะดวกครบ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,cottage,garden?lock=23" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ไม้ใหญ่ รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ไม้ใหญ่ รีสอร์ท</h4><p class="text-sm text-gray-600 mt-1">บ้านพักสไตล์คอทเทจ ร่มรื่นด้วยต้นไม้ใหญ่ บรรยากาศดี ราคาประหยัด</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,building,city?lock=24" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เพชร โฮเทล">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เพชร โฮเทล</h4><p class="text-sm text-gray-600 mt-1">โรงแรมขนาดใหญ่ มาตรฐานดี เดินทางไปสถานที่ต่างๆ ได้สะดวกมาก</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="udonthani" class="py-20 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYi6AI2_W7JgsspECuO9uUfCpg0w-v8_z6gLGXsWOFhQ&s=10" alt="อุดรธานี" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-secondary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคอีสาน</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดอุดรธานี (Udon Thani)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">ดินแดนอารยธรรมบ้านเชียง แหล่งรวมวัฒนธรรมอีสานร่วมสมัย คาเฟ่เก๋ๆ และความงามของธรรมชาติที่น่าหลงใหล</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/lotus,lake,thailand?lock=25" alt="ทะเลบัวแดง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ทะเลบัวแดง หนองหาน</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ชมความอลังการของดอกบัวแดงบานสะพรั่งเต็มบึงน้ำขนาดใหญ่ในช่วงฤดูหนาว นั่งเรือชมวิว</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/museum,pottery,history?lock=26" alt="พิพิธภัณฑสถานแห่งชาติบ้านเชียง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">พิพิธภัณฑ์บ้านเชียง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">แหล่งมรดกโลก ศึกษาอารยธรรมและเครื่องปั้นดินเผาลายเขียนสี ยุคก่อนประวัติศาสตร์</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/park,lake,duck?lock=27" alt="สวนสาธารณะหนองประจักษ์" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">สวนหนองประจักษ์</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">แลนด์มาร์คกลางเมือง ถ่ายรูปกับเป็ดยักษ์สีเหลือง พักผ่อนหย่อนใจ ปั่นจักรยานรอบบึง</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/temple,buddha,mountain?lock=28" alt="วัดป่าภูก้อน" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">วัดป่าภูก้อน</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">พุทธสถานวิจิตรตระการตาท่ามกลางป่าเขา ประดิษฐานพระพุทธไสยาสน์หินอ่อนขาว</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/vietnamese,food,roll?lock=29" class="w-28 h-28 rounded-xl object-cover mr-5" alt="วีที แหนมเนือง">
+                                <div><h4 class="font-bold text-gray-900 text-lg">วีที แหนมเนือง (VT)</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารเวียดนามชื่อดังระดับประเทศ มาอุดรต้องไม่พลาด ของฝากยอดฮิต</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/noodle,soup,thai?lock=30" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ข้าวเปียกเส้น">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ข้าวเปียกเส้น (อุดร)</h4><p class="text-sm text-gray-600 mt-1">อาหารเช้ายอดฮิต กวยจั๊บญวนเส้นเหนียวนุ่ม น้ำซุปกระดูกหมูเข้มข้น</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/somtum,papayasalad,spicy?lock=31" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ส้มตำเจ๊ไก่">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ส้มตำเจ๊ไก่</h4><p class="text-sm text-gray-600 mt-1">ส้มตำรสแซ่บจัดจ้าน ต้นตำรับอีสานแท้ๆ คิวแน่นทุกวัน เมนูหลากหลาย</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/breakfast,egg,bread?lock=32" class="w-28 h-28 rounded-xl object-cover mr-5" alt="คิงส์โอชา">
+                                <div><h4 class="font-bold text-gray-900 text-lg">คิงส์โอชา</h4><p class="text-sm text-gray-600 mt-1">ร้านไข่กระทะ สตูว์ไก่ ขนมปังยัดไส้ อาหารเช้าสไตล์อุดรเก่าแก่คลาสสิก</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,luxury,room?lock=33" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เซ็นทารา อุดรธานี">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เซ็นทารา อุดรธานี</h4><p class="text-sm text-gray-600 mt-1">โรงแรมหรูใจกลางเมือง ติดศูนย์การค้า สะดวกสบายระดับ 4 ดาว</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,vintage,wood?lock=34" class="w-28 h-28 rounded-xl object-cover mr-5" alt="บราวน์เฮ้าส์ โฮเทล">
+                                <div><h4 class="font-bold text-gray-900 text-lg">บราวน์เฮ้าส์ โฮเทล</h4><p class="text-sm text-gray-600 mt-1">ที่พักสไตล์อีสานวินเทจ ถ่ายรูปสวย วิวบึงน้ำ เงียบสงบ เหมาะกับสายคอนเทนต์</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,boutique,modern?lock=35" class="w-28 h-28 rounded-xl object-cover mr-5" alt="พรรณราย โฮเทล">
+                                <div><h4 class="font-bold text-gray-900 text-lg">พรรณราย โฮเทล</h4><p class="text-sm text-gray-600 mt-1">โรงแรมบูทีคทำเลดี ใกล้สถานีรถไฟและย่านแหล่งช้อปปิ้งกลางคืน</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,pool,clean?lock=36" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เดอะ แพนเนอรี่">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เดอะ แพนเนอรี่ (The Pannarai)</h4><p class="text-sm text-gray-600 mt-1">ที่พักสะอาด ทันสมัย มีสระว่ายน้ำ คุ้มค่าราคา เดินทางสะดวก</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rayong" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkIsWLrXOIjp2s9p6gu5GqUI2PMcs_1-T8nbIWI3M1vA&s=10" alt="ระยอง" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-primary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคตะวันออก</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดระยอง (Rayong)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">สวรรค์แห่งภาคตะวันออก ทะเลสวย หาดทรายขาว อาหารทะเลสดใหม่ และแหล่งรวมผลไม้รสเลิศของไทย</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/beach,island,sea?lock=37" alt="เกาะเสม็ด" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">เกาะเสม็ด</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เกาะสวรรค์ยอดฮิต น้ำทะเลใส หาดทรายขาวละเอียด มีที่พักหลากหลาย กิจกรรมแน่น</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/mangrove,forest,gold?lock=38" alt="ทุ่งโปรงทอง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ทุ่งโปรงทอง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เดินชิลบนสะพานไม้ทอดยาว ชมป่าชายเลนที่ใบไม้เปลี่ยนเป็นสีทองอร่ามเมื่อกระทบแสงแดด</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/botanical,kayak,lake?lock=39" alt="สวนพฤกษศาสตร์ระยอง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">สวนพฤกษศาสตร์ระยอง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">พายเรือคายัคชมป่าเสม็ดดึกดำบรรพ์ พื้นที่ชุ่มน้ำที่สวยงามแปลกตา ถ่ายรูปสวยมาก</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/beach,sand,sunset?lock=40" alt="หาดแม่รำพึง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">หาดแม่รำพึง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ชายหาดทอดยาว นั่งเตียงผ้าใบรับลมทะเล พร้อมร้านอาหารซีฟู้ดตั้งเรียงรายมากมาย</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/seafood,fish,fried?lock=41" class="w-28 h-28 rounded-xl object-cover mr-5" alt="แหลมเจริญ ซีฟู้ด">
+                                <div><h4 class="font-bold text-gray-900 text-lg">แหลมเจริญ ซีฟู้ด (ต้นตำรับ)</h4><p class="text-sm text-gray-600 mt-1">ตำนานปลากะพงทอดน้ำปลา อาหารทะเลสด รสชาติมาตรฐานระดับประเทศ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/restaurant,forest,waterfall?lock=42" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านอาหารตำนานป่า">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านอาหารตำนานป่า</h4><p class="text-sm text-gray-600 mt-1">ทานอาหารท่ามกลางธรรมชาติ ต้นไม้ร่มรื่น สวนน้ำตกอลังการสุดอลังการ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/padthai,noodles,shrimp?lock=43" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ผัดไทคุณไกร">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ผัดไทคุณไกร</h4><p class="text-sm text-gray-600 mt-1">ผัดไทรสเด็ดชื่อดังของระยอง เครื่องแน่น รสชาติเข้มข้น ไม่ต้องปรุงเพิ่ม</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/seafood,crab,beach?lock=44" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เจ๊จิ๋ม ซีฟู้ด">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เจ๊จิ๋ม ซีฟู้ด (หาดแม่รำพึง)</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารทะเลริมหาด ราคาเป็นมิตร กุ้งหอยปูปลาสดมาก น้ำจิ้มแซ่บ</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,pool,luxury?lock=45" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ระยอง แมริออท รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ระยอง แมริออท รีสอร์ท</h4><p class="text-sm text-gray-600 mt-1">รีสอร์ทหรู 5 ดาวริมหาด สระว่ายน้ำใหญ่ สิ่งอำนวยความสะดวกครบครัน</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/villa,beach,resort?lock=46" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ปารดี รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ปารดี รีสอร์ท (เกาะเสม็ด)</h4><p class="text-sm text-gray-600 mt-1">วิลล่าส่วนตัวระดับไฮเอนด์บนเกาะเสม็ด เงียบสงบ มีหาดส่วนตัวสุดเอ็กซ์คลูซีฟ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,beachfront,family?lock=47" class="w-28 h-28 rounded-xl object-cover mr-5" alt="โนโวเทล ระยอง ริมเพ">
+                                <div><h4 class="font-bold text-gray-900 text-lg">โนโวเทล ระยอง ริมเพ</h4><p class="text-sm text-gray-600 mt-1">โรงแรมติดชายหาดริมเพ เหมาะสำหรับการพักผ่อนแบบครอบครัวและเด็กๆ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,apartment,city?lock=48" class="w-28 h-28 rounded-xl object-cover mr-5" alt="คลาสสิค คามิโอ ระยอง">
+                                <div><h4 class="font-bold text-gray-900 text-lg">คลาสสิค คามิโอ ระยอง</h4><p class="text-sm text-gray-600 mt-1">เซอร์วิสอพาร์ตเมนต์กึ่งโรงแรมใจกลางเมืองระยอง สะดวกสบาย ห้องกว้าง</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tak" class="py-20 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgjuWevT4eABOz4js7Ac-cILkHTcPY-4tpLn-I5dybQ&s=10" alt="ตาก" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-secondary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคตะวันตก</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดตาก (Tak)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">เมืองหน้าด่านทางตะวันตก สัมผัสสุดยอดความอลังการของน้ำตกที่ใหญ่ที่สุดในไทย และผืนป่าที่อุดมสมบูรณ์ แหล่งท่องเที่ยวทางธรรมชาติชั้นยอด</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/waterfall,nature,grand?lock=49" alt="น้ำตกทีลอซู" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">น้ำตกทีลอซู</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">น้ำตกที่ยิ่งใหญ่และสวยงามที่สุดในไทย มรดกทางธรรมชาติของโลกที่ต้องไปเยือนสักครั้ง</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/dam,water,mountain?lock=50" alt="เขื่อนภูมิพล" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">เขื่อนภูมิพล</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เขื่อนคอนกรีตโค้งที่ใหญ่ที่สุดในไทย ล่องเรือชมวิวอ่างเก็บน้ำกว้างใหญ่เหนือเขื่อน</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/bridge,river,sunset?lock=51" alt="สะพานสมโภชกรุงรัตนโกสินทร์ 200 ปี" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">สะพานสมโภชฯ 200 ปี</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">สะพานแขวนไม้ทอดยาวข้ามแม่น้ำปิง จุดชมวิวพระอาทิตย์ตกที่สวยงามและคลาสสิกสุดๆ</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/mountain,trekking,gold?lock=52" alt="ดอยทูเล" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ดอยทูเล (ม่อนทูเล)</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ยอดเขาสูง ทุ่งหญ้าสีทอง จุดกางเต็นท์ท้าทายนักเดินป่าสายผจญภัย วิวทะเลภูเขาสวยงาม</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/restaurant,jungle,thai?lock=53" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านอาหารข้าวเม่า-ข้าวฟ่าง">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านข้าวเม่า-ข้าวฟ่าง (แม่สอด)</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารตกแต่งสไตล์ป่าดงดิบสุดอลังการ ร่มรื่น อาหารไทยอร่อยมาก</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/fish,restaurant,river?lock=54" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ไอยราวดี">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ไอยราวดี (แม่สอด)</h4><p class="text-sm text-gray-600 mt-1">ร้านอาหารริมแม่น้ำเมย บรรยากาศดี เมนูปลาแม่น้ำสดๆ หลากหลายเมนู</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/padthai,retro,food?lock=55" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ผัดไทยตรอกบ้านจีน">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ผัดไทยตรอกบ้านจีน</h4><p class="text-sm text-gray-600 mt-1">ผัดไทยโบราณในย่านชุมชนเก่าแก่ รสชาติกลมกล่อม สูตรเด็ดดั้งเดิม</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/noodle,field,view?lock=56" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านก๋วยเตี๋ยวบ้านนา">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านก๋วยเตี๋ยวบ้านนา</h4><p class="text-sm text-gray-600 mt-1">ก๋วยเตี๋ยวเครื่องแน่น บรรยากาศริมท้องทุ่งนา นั่งชิลสบายๆ รับลมเย็น</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,river,view?lock=57" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เวียงตาก ริเวอร์ไซด์">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เวียงตาก ริเวอร์ไซด์</h4><p class="text-sm text-gray-600 mt-1">โรงแรมมาตรฐานริมแม่น้ำปิง วิวสวย ทำเลดีใจกลางเมืองตาก</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,modern,room?lock=58" class="w-28 h-28 rounded-xl object-cover mr-5" alt="เซ็นทารา ไลฟ์ แม่สอด">
+                                <div><h4 class="font-bold text-gray-900 text-lg">เซ็นทารา ไลฟ์ แม่สอด</h4><p class="text-sm text-gray-600 mt-1">ที่พักสะดวกสบายในอำเภอแม่สอด ใกล้แหล่งธุรกิจและตลาดชายแดน</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/boutique,hotel,bed?lock=59" class="w-28 h-28 rounded-xl object-cover mr-5" alt="โซโห บูทีค โฮเทล">
+                                <div><h4 class="font-bold text-gray-900 text-lg">โซโห บูทีค โฮเทล</h4><p class="text-sm text-gray-600 mt-1">โรงแรมสไตล์โมเดิร์น สะอาด ราคาคุ้มค่า บริการเป็นกันเอง</p></div>
+                            </div>
+                            <div class="flex bg-gray-50 rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/guesthouse,home,cute?lock=60" class="w-28 h-28 rounded-xl object-cover mr-5" alt="บ้านปองฤดู">
+                                <div><h4 class="font-bold text-gray-900 text-lg">บ้านปองฤดู</h4><p class="text-sm text-gray-600 mt-1">ที่พักน่ารัก ตกแต่งสวยงาม บรรยากาศอบอุ่นเหมือนอยู่บ้านตัวเอง</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="phuket" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Province Banner -->
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden mb-16 shadow-2xl image-zoom group">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPd4mHaUk1yT7B4irPo13cPctxQtEs31shCV2_yKWdQ&s=10" alt="ภูเก็ต" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <span class="text-primary font-bold tracking-wider uppercase text-sm md:text-base mb-2">ภาคใต้</span>
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">จังหวัดภูเก็ต (Phuket)</h2>
+                        <p class="text-lg md:text-xl text-gray-200 max-w-3xl drop-shadow-md">ไข่มุกอันดามัน สวรรค์ของนักท่องเที่ยวระดับโลกที่มีทั้งทะเลสวยงามระดับเวิลด์คลาส และย่านเมืองเก่าชิโนโปรตุกีสที่มีเสน่ห์</p>
+                    </div>
+                </div>
+
+                <!-- Attractions -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 flex items-center border-l-4 border-primary pl-4">สถานที่ท่องเที่ยวแนะนำ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/cape,sunset,sea?lock=61" alt="แหลมพรหมเทพ" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">แหลมพรหมเทพ</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">จุดชมพระอาทิตย์ตกดินที่สวยที่สุดในประเทศไทย แลนด์มาร์คสำคัญที่ใครมาก็ต้องแวะ</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/oldtown,sino,phuket?lock=62" alt="ย่านเมืองเก่าภูเก็ต" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">ย่านเมืองเก่าภูเก็ต</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">เดินเล่นชมตึกชิโน-โปรตุกีสหลากสีสัน ถ่ายรูปสตรีทอาร์ตและแวะคาเฟ่สุดชิค</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/beach,patong,sea?lock=63" alt="หาดป่าตอง" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">หาดป่าตอง</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">ชายหาดที่มีชื่อเสียงที่สุด กิจกรรมทางน้ำครบครัน และชีวิตกลางคืนที่คึกคักสีสันเต็มเปี่ยม</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover">
+                        <img src="https://loremflickr.com/800/600/buddha,big,statue?lock=64" alt="พระใหญ่ภูเก็ต" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">พระใหญ่ (Big Buddha)</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">องค์พระพุทธรูปหินอ่อนสีขาวขนาดใหญ่บนยอดเขานาคเกิด ชมวิวทะเลภูเก็ตแบบ 360 องศา</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurants & Hotels Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-secondary text-white p-2 rounded-lg mr-3 text-sm">🍽️</span> ร้านอาหารแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/thaifood,local,spicy?lock=65" class="w-28 h-28 rounded-xl object-cover mr-5" alt="หมอมุดง">
+                                <div><h4 class="font-bold text-gray-900 text-lg">หมอมุดง</h4><p class="text-sm text-gray-600 mt-1">อาหารพื้นบ้านภูเก็ตแท้ๆ รสชาติจัดจ้าน ได้รับรางวัลมิชลินบิบกูร์มองด์ การันตีความอร่อย</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/restaurant,vintage,sino?lock=66" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ร้านตู้กับข้าว">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ร้านตู้กับข้าว</h4><p class="text-sm text-gray-600 mt-1">อาหารใต้รสชาติดีเยี่ยม ในตึกสไตล์ชิโนโปรตุกีสใจกลางเมืองเก่า บรรยากาศหรูหรา</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/curry,crab,thaifood?lock=67" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ระย้า">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ระย้า</h4><p class="text-sm text-gray-600 mt-1">ตำนานแกงเนื้อปูใบชะพลู ร้านอาหารดั้งเดิมที่ใครมาภูเก็ตก็ต้องแวะทาน</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/seafood,market,fresh?lock=68" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ตลาดซีฟู้ดราไวย์">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ตลาดซีฟู้ดราไวย์</h4><p class="text-sm text-gray-600 mt-1">ซื้อของทะเลสดๆ จากชาวเล แล้วจ้างร้านอาหารริมหาดปรุงตามใจชอบ สดและถูก</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center"><span class="bg-blue-500 text-white p-2 rounded-lg mr-3 text-sm">🏨</span> สถานที่พักแนะนำ</h3>
+                        <div class="space-y-4">
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/villa,pool,ocean?lock=69" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ศรีพันวา ภูเก็ต">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ศรีพันวา ภูเก็ต</h4><p class="text-sm text-gray-600 mt-1">พูลวิลล่าสุดหรูระดับโลก วิวพาโนรามาบนแหลมพันวา บริการสุดประทับใจ</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,beach,pool?lock=70" class="w-28 h-28 rounded-xl object-cover mr-5" alt="กะตะธานี ภูเก็ต บีช รีสอร์ท">
+                                <div><h4 class="font-bold text-gray-900 text-lg">กะตะธานี ภูเก็ต บีช รีสอร์ท</h4><p class="text-sm text-gray-600 mt-1">รีสอร์ทติดหาดกะตะน้อย สระว่ายน้ำหลายสระ เหมาะสำหรับการพักผ่อนแบบครอบครัว</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/hotel,bay,view?lock=71" class="w-28 h-28 rounded-xl object-cover mr-5" alt="อมารี ภูเก็ต">
+                                <div><h4 class="font-bold text-gray-900 text-lg">อมารี ภูเก็ต (Amari)</h4><p class="text-sm text-gray-600 mt-1">ตั้งอยู่สุดปลายหาดป่าตอง วิวอ่าวสวยงาม เงียบสงบ แต่เดินทางไปแสงสีได้ง่าย</p></div>
+                            </div>
+                            <div class="flex bg-white rounded-2xl p-3 card-hover border border-gray-100 shadow-sm items-center">
+                                <img src="https://loremflickr.com/300/300/resort,lagoon,luxury?lock=72" class="w-28 h-28 rounded-xl object-cover mr-5" alt="ดุสิตธานี ลากูน่า ภูเก็ต">
+                                <div><h4 class="font-bold text-gray-900 text-lg">ดุสิตธานี ลากูน่า ภูเก็ต</h4><p class="text-sm text-gray-600 mt-1">โรงแรมหรูคลาสสิกริมหาดบางเทา ร่มรื่นด้วยสวนสวย ในบริเวณลากูน่าภูเก็ต</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-12 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4 tracking-tight">GO TO <span class="text-secondary">KNOW</span></h2>
+            <p class="text-gray-400 mb-6 text-lg">เที่ยวไทยไม่ไปไม่รู้ 6 ภาค 6 จังหวัด</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
+                    <span class="sr-only">Facebook</span>
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2026 GO TO KNOW Thailand. จัดทำเพื่อการศึกษา</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur and shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-opacity-100', 'bg-opacity-95');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-opacity-95', 'bg-opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>
